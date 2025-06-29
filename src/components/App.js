@@ -8,7 +8,7 @@ import "./../styles/App.css";
 const App = () => {
   return (
     <BrowserRouter>
-      <div>
+      <div id="main">
         {/* Do not remove the main div */}
         <Navigation />
         <Routes>
