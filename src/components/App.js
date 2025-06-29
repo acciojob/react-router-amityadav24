@@ -1,8 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import Navigation from "./Navigation";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./../styles/App.css";
 
 const App = () => {
@@ -10,10 +7,14 @@ const App = () => {
     <BrowserRouter>
       <div id="main">
         {/* Do not remove the main div */}
-        <Navigation />
+        <nav>
+          <Link to="/">Home</Link>
+          <span> | </span>
+          <Link to="/about">About</Link>
+        </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<h1>Welcome to my website!</h1>} />
+          <Route path="/about" element={<h1>This is a sample React Router program.</h1>} />
         </Routes>
       </div>
     </BrowserRouter>
