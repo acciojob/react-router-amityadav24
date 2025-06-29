@@ -1,20 +1,19 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "./../styles/App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Home from "./components/Home";
+import About from "./components/About";
+import "./styles/App.css";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div id="main">
         {/* Do not remove the main div */}
-        <nav>
-          <Link to="/">Home</Link>
-          <span> | </span>
-          <Link to="/about">About</Link>
-        </nav>
+        <Navigation />
         <Routes>
-          <Route path="/" element={<h1>Welcome to my website!</h1>} />
-          <Route path="/about" element={<h1>This is a sample React Router program.</h1>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </BrowserRouter>
